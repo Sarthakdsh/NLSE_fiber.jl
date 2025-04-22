@@ -1,0 +1,13 @@
+name = "NLSE_fiber"
+uuid = "18a87857-915e-4f5c-b265-a08c07a9e3ee"
+authors = ["Sarthakdsh <sarthakdsh@gmail.com> and contributors"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.11"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
