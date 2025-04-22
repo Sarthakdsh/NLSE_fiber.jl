@@ -3,4 +3,7 @@ using Test
 
 @testset "NLSE_fiber.jl" begin
     # Write your tests here.
+
+    @test NLSE_fiber.demo() == 3
+
 end
