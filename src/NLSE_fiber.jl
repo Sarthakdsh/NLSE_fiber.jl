@@ -1,9 +1,16 @@
 module NLSE_fiber
 
-# Write your package code here.
+# function demo(x=1, y=2)
+#     println("Hello, World!")
+#     return x + y
+# end
 
-function demo(x=1, y=2)
-    return x + y
-end
+export create_time_grid, create_frequency_grid
+export Pulse, gaussian_pulse, sech_pulse, energy, peak_power, fwhm
+export plot_pulse
+
+include("grid.jl")
+include("pulse.jl")
+include("visualization.jl")
 
 end
