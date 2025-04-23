@@ -9,9 +9,9 @@ using Plots
 Create a plot of the pulse in both time and frequency domains.
 """
 function plot_pulse(pulse::Pulse)
-    # Check if pulse is empty
+    # Check if pulse is invalid (empty containts)
     if isempty(pulse.t) || isempty(pulse.field_t)
-        error("Pulse is empty. Please provide a valid pulse.")
+        error("Pulse does not contain any data. Please provide a valid pulse.")
     end
 
     # Time domain plot

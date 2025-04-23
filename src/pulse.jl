@@ -26,18 +26,6 @@ mutable struct Pulse
     function Pulse(t::Vector{Float64}, field_t::Vector{ComplexF64})
         return new(t, field_t)
     end
-
-    """
-        Pulse(t)
-    
-    Create an empty pulse with specified time window.
-    
-    # Arguments
-    - `t::Vector{Float64}`: Time grid
-    """
-    function Pulse(t::Vector{Float64})
-        return new(t, zeros(ComplexF64, N))
-    end
 end # Pulse
 
 

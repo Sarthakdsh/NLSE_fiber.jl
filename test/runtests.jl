@@ -1,6 +1,7 @@
 using NLSE_fiber
 using Test
 using FFTW
+using Plots
 
 @testset "NLSE_fiber.jl" begin
     @testset "Grid Functions" begin
@@ -82,5 +83,25 @@ using FFTW
         wrong_chirp = ones(length(t) + 1)
         @test_throws AssertionError gaussian_pulse(t, t0, power, wrong_chirp)
         @test_throws AssertionError sech_pulse(t, t0, power, wrong_chirp)
+    end
+
+    @testset "Visualization" begin
+        @testset "plot_pulse" begin
+            # Create a test pulse
+            t = create_time_grid(-10e-12, 10e-12, 1024)
+            t0 = 1e-12
+            power = 1e3
+            pulse = gaussian_pulse(t, t0, power)
+
+            # Test normal plotting
+            p = plot_pulse(pulse)
+            @test p isa Plots.Plot
+            @test length(p.subplots) == 2  # Should have 2 subplots
+
+
+            # Test invalid pulse
+            invalid_pulse = Pulse(Float64[], Complex{Float64}[])
+            @test_throws ErrorException plot_pulse(invalid_pulse)
+        end
     end
 end
