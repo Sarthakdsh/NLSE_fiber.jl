@@ -6,7 +6,7 @@ module NLSE_fiber
 # end
 
 export create_time_grid, create_frequency_grid
-export Pulse, gaussian_pulse, sech_pulse, energy, peak_power, fwhm
+export Pulse, gaussian_pulse, sech_pulse, energy, peak_power, get_field_ω, fwhm
 export plot_pulse
 
 include("grid.jl")
